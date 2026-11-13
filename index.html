@@ -92,11 +92,39 @@ src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"
   .closing .btn-primary{margin-top:24px;background:#fff;color:var(--primary-dark)}
   .closing .btn-primary:hover{background:#EAF2FF}
 
+  .videogrid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .videocard video{width:100%;border-radius:16px;display:block;background:#000;aspect-ratio:9/16;max-height:460px;object-fit:cover;border:1px solid var(--border)}
+  .videocard p{font-size:13.5px;color:var(--muted);margin-top:10px;text-align:center}
+
+  .previewgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .previewcard{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+  .previewcard img{width:100%;display:block;border-bottom:1px solid var(--border)}
+  .previewcard span{display:block;padding:10px 14px;font-size:12.5px;color:var(--muted);font-weight:600}
+
+  .pricing{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .pricegrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+  .pricecard{border:1px solid var(--border);border-radius:18px;padding:26px 24px;text-align:center;position:relative;background:var(--bg)}
+  .pricecard.featured{border-color:var(--accent);background:linear-gradient(180deg,rgba(31,143,224,.08),rgba(31,143,224,0));}
+  .pricecard .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11.5px;font-weight:700;padding:5px 14px;border-radius:999px;white-space:nowrap}
+  .pricecard h3{font-size:16px;color:var(--muted);font-weight:600;font-family:var(--font-body)}
+  .pricecard .amount{font-family:var(--font-display);font-size:34px;color:var(--primary-dark);margin-top:10px}
+  .pricecard .amount span{font-size:16px;font-weight:500;color:var(--muted)}
+  .pricecard p{margin-top:8px;font-size:13.5px;color:var(--muted)}
+
+  .deliverylist{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px}
+  .delchip{font-size:13px;color:var(--fg);background:var(--bg);border:1px solid var(--border);border-radius:999px;padding:9px 16px}
+
+  .contactbox{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:22px}
+  .contactlink{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--primary-dark);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:10px 18px}
+
+  .buyrow{display:flex;justify-content:center;margin-top:26px}
+
   footer{padding-block:28px;border-top:1px solid var(--border)}
   footer .wrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted)}
 
   @media (max-width:760px){
-    .herogrid, .bookgrid{grid-template-columns:1fr}
+    .herogrid, .bookgrid, .videogrid, .pricegrid{grid-template-columns:1fr}
+    .previewgrid{grid-template-columns:1fr 1fr}
     .stats{grid-template-columns:1fr}
     .presentercard{max-width:280px;margin:0 auto}
   }
@@ -121,7 +149,7 @@ src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"
 <div class="topbar">
   <div class="wrap">
     <div class="brand"><span class="mark">XL</span> SAT Uzbekistan</div>
-    <a class="topcta" href="#" id="topcta">Telegramga o'tish</a>
+    <a class="topcta" href="#" id="topcta">Sotib olish</a>
   </div>
 </div>
 
@@ -134,19 +162,19 @@ src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"
       <div class="ctarow">
         <a class="btn-primary" href="#" id="herocta">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21.5 4.5 2.5 12l6 2.2m13-9.7-3 16-7-5m10-11-10 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Telegram kanalga qo'shilish
+          Telegramda sotib olish
         </a>
-        <span class="trustline">DSAT Math Turbo Book haqida batafsil</span>
+        <span class="trustline">60 000 so'mdan — BTS orqali yetkazib beramiz</span>
       </div>
       <div class="stats">
-        <div class="stat"><b>2 qism</b><span>to'liq, ketma-ket tuzilgan</span></div>
+        <div class="stat"><b>2 qism</b><span>har biri 400 sahifa</span></div>
         <div class="stat"><b>21 mavzu</b><span>Expressions'dan Volumes'gacha</span></div>
         <div class="stat"><b>2000+</b><span>mashq va test savoli</span></div>
       </div>
     </div>
     <div class="presentercard">
-      <img src="assets/expert-day.jpg" alt="Xodiyev Lutfullaxon - SAT Matematika bo'yicha ekspert">
-      <div class="pname">Xodiyev Lutfullaxon</div>
+      <img src="assets/expert-day.jpg" alt="Xodiyev Lutfulloxon - SAT Matematika bo'yicha ekspert">
+      <div class="pname">Xodiyev Lutfulloxon</div>
       <div class="prole">SAT Matematika bo'yicha ekspert &middot; 12 marta 800 ballik rekordchi</div>
     </div>
   </div>
@@ -172,6 +200,88 @@ src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"
           </div>
         </div>
       </div>
+      <p style="margin-top:22px;font-size:13.5px;color:var(--muted)">Har bir kitob — 400 sahifa: mavzu bo'yicha qisqa ma'ruzalar, yechilgan misollar va har sahifada yangi terminlar lug'ati. Mashqlar haqiqiy SAT imtihonlari va saralangan Turbo bazalar asosida tuzilgan.</p>
+    </section>
+  </div>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="section-head">
+      <span class="kicker">Haqiqiy kitob</span>
+      <h2>Qo'lingizga tegadigan, bosilgan kitob</h2>
+    </div>
+    <div class="videogrid">
+      <div class="videocard">
+        <video controls playsinline preload="metadata" src="assets/book-video1.mp4"></video>
+        <p>DSAT Math Turbo Book — 2-qism, bosmadan chiqqan nusxa</p>
+      </div>
+      <div class="videocard">
+        <video controls playsinline preload="metadata" src="assets/book-video2.mp4"></video>
+        <p>1 va 2-qismlar — tayyor, jo'natishga shay</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="section-head">
+      <span class="kicker">Kitob ichidan</span>
+      <h2>Namuna sahifalar</h2>
+    </div>
+    <div class="previewgrid">
+      <div class="previewcard">
+        <img src="assets/preview-3.jpg" alt="DSAT Math Turbo Book — Algebra mavzusidan namuna sahifa">
+        <span>Algebra — savol va terminlar</span>
+      </div>
+      <div class="previewcard">
+        <img src="assets/preview-4.jpg" alt="DSAT Math Turbo Book — grafik bilan savol namunasi">
+        <span>Grafik asosidagi savol</span>
+      </div>
+      <div class="previewcard">
+        <img src="assets/preview-5.jpg" alt="DSAT Math Turbo Book — geometriya mavzusidan namuna sahifa">
+        <span>Koordinata geometriyasi</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="pricing" id="narx">
+  <div class="wrap">
+    <section>
+      <div class="section-head center" style="margin-inline:auto;text-align:center">
+        <span class="kicker">Narxlar va yetkazib berish</span>
+        <h2>Kitobni qanday sotib olaman?</h2>
+      </div>
+      <div class="pricegrid">
+        <div class="pricecard">
+          <h3>1-qism</h3>
+          <div class="amount">60 000<span> so'm</span></div>
+          <p>11 mavzu, 1078 savol</p>
+        </div>
+        <div class="pricecard featured">
+          <span class="badge">Tavsiya etiladi</span>
+          <h3>1 va 2-qism birga</h3>
+          <div class="amount">120 000<span> so'm</span></div>
+          <p>21 mavzu, 2000 dan ortiq savol — to'liq to'plam</p>
+        </div>
+      </div>
+      <div class="deliverylist">
+        <span class="delchip">📦 BTS orqali yetkazib beramiz</span>
+        <span class="delchip">🚚 Viloyatlarga — 1 kunda</span>
+        <span class="delchip">🚚 Qoraqalpog'iston va Surxondaryoga — 2 kun ichida</span>
+      </div>
+      <div class="contactbox">
+        <a class="contactlink" href="https://t.me/xodiyevnashriyotadmin" target="_blank" rel="noopener">Admin: @xodiyevnashriyotadmin</a>
+        <a class="contactlink" href="tel:+998778417178">📞 +998 77 841 71 78</a>
+      </div>
+      <div class="buyrow">
+        <a class="btn-primary" href="#" id="buycta">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21.5 4.5 2.5 12l6 2.2m13-9.7-3 16-7-5m10-11-10 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Telegramda sotib olish
+        </a>
+      </div>
     </section>
   </div>
 </div>
@@ -181,10 +291,10 @@ src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"
     <div class="closing">
       <span class="eyebrow">Digital SAT · Math</span>
       <h2>SAT dan ishonchli manbalarni qidirib yurmang</h2>
-      <p>Barcha mavzular, formulalar va 2000 dan ortiq savol — bitta qo'llanmada. Telegram kanalimizga qo'shiling va batafsil ma'lumot oling.</p>
+      <p>Barcha mavzular, formulalar va 2000 dan ortiq savol — bitta qo'llanmada. Telegramda admin bilan bog'laning va bugunoq buyurtma bering.</p>
       <a class="btn-primary" href="#" id="closingcta">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21.5 4.5 2.5 12l6 2.2m13-9.7-3 16-7-5m10-11-10 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Telegram kanalga qo'shilish
+        Telegramda sotib olish
       </a>
     </div>
   </section>
@@ -198,13 +308,13 @@ src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"
 </footer>
 
 <script>
-  var TG_LINK = "https://t.me/satuzbhunters";
+  var TG_LINK = "https://t.me/xodiyevnashriyotadmin";
   function goToTelegram(e){
     e.preventDefault();
     if (typeof fbq === "function") { fbq('track', 'Lead'); }
     window.location.href = TG_LINK;
   }
-  ["topcta","herocta","closingcta"].forEach(function(id){
+  ["topcta","herocta","buycta","closingcta"].forEach(function(id){
     var el = document.getElementById(id);
     if (el) el.addEventListener("click", goToTelegram);
   });
